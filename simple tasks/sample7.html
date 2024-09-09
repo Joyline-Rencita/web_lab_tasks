@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display(){
+            document.getElementById('divRes').innerHTML = document.getElementById('txt').value;
+        }
+    </script>
+    <style>
+        div{
+            color: red;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="txt" name="txt">
+    <br>
+    <input type="button" id="btn" name="btn" value="Display" onClick="display()">
+    <div id="divRes"></div>
+</body>
+</html>
