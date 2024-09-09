@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt" name="txt">
+    <input type="button" id="btn" name="btn" value="click" onclick="display()">
+    <div id="divRes"></div>
+    <script>
+        function display() {
+            a= document.getElementById("txt").value;
+            for(i=0; i<a.length;i++){
+                document.getElementById("divRes").innerHTML  += a.charAt(i)+"<br>";
+            }
+        }
+    </script>
+</body>
+</html>
