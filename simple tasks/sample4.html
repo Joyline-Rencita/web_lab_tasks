@@ -1,0 +1,43 @@
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt" name="txt">
+    <p><input type="button" id="btn" name="btn" value="click" onclick="display1(document.getElementById('txt').value)"></p>
+    The position in the string of the left-most vowel
+    <div id="divRes1"></div>
+    <br>
+    <input type="number" id="num" name="num">
+    <p><input type="button" id="btn" name="btn" value="click" onclick="display2(document.getElementById('num').value)"></p>
+    <br>
+    The number withy its digits in reverse oreder: 
+    <div id="divRes2"></div>
+
+
+    <script>
+
+       function display1(str1) {
+        str=str1.toLowerCase();
+        for(i=0;i<str.length;i++){
+            if(str.charAt(i)=='a'|| str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u'){
+                document.getElementById("divRes1").innerHTML = i+1;
+                return;
+            }
+        }
+        document.getElementById("divRes1").innerHTML="there is no vowel";
+        
+    }
+
+        function display2(num) {
+            result = Number(String(num).split('').reverse().join(''));
+            document.getElementById("divRes2").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
