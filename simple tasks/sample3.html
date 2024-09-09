@@ -1,0 +1,40 @@
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" name="btn" value="display" onClick="b=setInterval(grow,1000)"><br>
+    <div id="divRes"></div>
+    <script>
+            ft = 10;
+            a =document.getElementById("divRes");
+           
+
+        function grow() {
+            a.innerHTML = "TEXT GROWING";
+            a.style.color="red";
+            ft += 4;
+            a.style.fontSize=ft+"pt";
+            if(ft >50){
+                clearInterval(b);
+                setInterval(shrink,1000);
+            }
+         }
+
+         function shrink() {
+            a.innerHTML = "TEXT SHRINKING";
+            a.style.color="blue";
+            ft -= 4;
+            a.style.fontSize=ft+"pt";
+            if(ft<5){
+                clearInterval(c);
+            }
+         } 
+    </script>
+</body>
+</html>
