@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>TIC TAC TOE</title>
+    </head>
+    <style>
+        #tb1,#tb2,#tb3,#tb4,#tb5,#tb6,#tb7,#tb8,#tb9
+        {
+            background-color: antiquewhite;
+            font-size: 50px;
+            font-weight: 100;
+            
+        }
+        #clr {background-color: rgb(235, 129, 129);
+                font-size: 40px;}
+        h1 { text-align: center;}
+    </style>
+    <script>
+        turn=" X ";
+        count=0;
+        
+
+        function play(btn)
+        {
+            
+            if(btn.value=="    ")
+            {
+
+                btn.value=turn;
+                count++;
+                var l1=document.getElementById("tb1").value;
+                var l2=document.getElementById("tb2").value;
+                var l3=document.getElementById("tb3").value;
+                var l4=document.getElementById("tb4").value;
+                var l5=document.getElementById("tb5").value;
+                var l6=document.getElementById("tb6").value;
+                var l7=document.getElementById("tb7").value;
+                var l8=document.getElementById("tb8").value;
+                var l9=document.getElementById("tb9").value;
+                if((l1==l2 && l2==l3 && l3==turn)||(l4==l5&&l5==l6&&l6==turn)||(l7==l8&&l8==l9&&l9==turn)|| (l1==l4&&l4==l7&&l7==turn)||(l2==l5&&l5==l8&&l8==turn)||(l3==l6&&l6==l9&&l9==turn)||(l1==l5&&l5==l9&&l9==turn)||(l3==l5&&l5==l7&&l7==turn))
+                {
+                    alert("Player " + turn+ "won!!");
+                    clear1();
+                    turn=" O ";
+                    
+                }
+                if(count>8)
+                {
+                    alert("Play again");
+                    clear1();
+                    turn=" O "
+                }
+                if(turn==" X ")
+                {
+                    turn=" O ";
+                    document.getElementById("playerid").innerHTML="Player "+turn;
+                }
+                else
+                {
+                    turn=" X ";
+                    document.getElementById("playerid").innerHTML="Player "+turn;
+                }       
+            }
+        }
+
+        function clear1(){
+            document.getElementById("tb1").value="    ";
+            document.getElementById("tb2").value="    ";
+            document.getElementById("tb3").value="    ";
+            document.getElementById("tb4").value="    ";
+            document.getElementById("tb5").value="    ";
+            document.getElementById("tb6").value="    ";
+            document.getElementById("tb7").value="    ";
+            document.getElementById("tb8").value="    ";
+            document.getElementById("tb9").value="    ";
+            turn=" X ";
+            document.getElementById("playerid").innerHTML="Player X";
+            count=0;
+        }
+        
+        
+        
+    </script>
+    <body style="background-color: rgb(242, 200, 200); margin: 100px">
+        <h1 >TIC-TAC-TOE</h1>
+        <div id="playerid" style="font-size: 30px; text-align: center;" >Player X</div><br><br>
+        <div id="btngrp" style="text-align: center;">
+        <input type ="button" id="tb1" value="    " onclick="play(this);"/>
+        <input type ="button" id="tb2" value="    " onclick="play(this)"/>
+        <input type ="button" id="tb3" value="    " onclick="play(this);"/><br>
+        <input type ="button" id="tb4" value="    " onclick="play(this);"/>
+        <input type ="button" id="tb5" value="    " onclick="play(this);"/>
+        <input type ="button" id="tb6" value="    " onclick="play(this);"/><br>
+        <input type ="button" id="tb7" value="    " onclick="play(this);"/>
+        <input type ="button" id="tb8" value="    " onclick="play(this);"/>
+        <input type ="button" id="tb9" value="    " onclick="play(this);"/><br><br><br>
+
+        <input type ="button" id="clr" value="CLEAR" onclick="clear1();"/>
+        </div>
+
+            
+        
+    </body>
+</html>
