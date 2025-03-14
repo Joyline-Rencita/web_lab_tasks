@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h4{
+            margin-left: 30%;
+        }
+    </style>
+    <script>
+        function disable1(){
+       t1= document.getElementById('tx3').disabled=true;
+       t2= document.getElementById('tx4').disabled=true;
+        t3=document.getElementById('tx5').disabled=true;
+       t4= document.getElementById('tx6').disabled=true;
+       t5= document.getElementById('tx7').disabled=true;
+       t6= document.getElementById('tx8').disabled=true;
+       t7= document.getElementById('tx9').disabled=true;
+        t9=document.getElementById('tx10').disabled=true;
+       t10= document.getElementById('tx11').disabled=true;
+       t11= document.getElementById('tx12').disabled=true;
+       t12= document.getElementById('tx13').disabled=true;
+       t13= document.getElementById('tx14').disabled=true;
+       if(document.getElementById('tx1').value=="" &&document.getElementById('tx2').value==""){
+        disable1();
+        
+
+        }else{
+            enable();
+        }
+        disable1();
+        }
+        
+        function enable(){
+            document.getElementById('tx3').disabled=false;
+            document.getElementById('tx4').disabled=false;
+            document.getElementById('tx5').disabled=false;
+            document.getElementById('tx6').disabled=false;
+            document.getElementById('tx7').disabled=false;
+            document.getElementById('tx8').disabled=false;
+            document.getElementById('tx9').disabled=false;
+            document.getElementById('tx10').disabled=false;
+            document.getElementById('tx11').disabled=false;
+            document.getElementById('tx12').disabled=false;
+            document.getElementById('tx13').disabled=false;
+            document.getElementById('tx14').disabled=false;
+
+        }
+        
+       subtotal1=0;
+        function subtot1(v){
+            if(v)
+            subtotal1+=parseInt(v);
+            document.getElementById('subtotal1').value=subtotal1;
+            document.getElementById('total').value=subtotal2+subtotal1+subtotal3+subtotal4;
+
+
+        }
+        subtotal2=0;
+        function subtot2(v){
+            subtotal2+=parseInt(v);
+            document.getElementById('subtotal2').value=subtotal2;
+            document.getElementById('total').value=subtotal2+subtotal1+subtotal3+subtotal4;
+
+        }
+        subtotal3=0;
+        function subtot3(v){
+            subtotal3+=parseInt(v);
+            document.getElementById('subtotal3').value=subtotal3;
+            document.getElementById('total').value=subtotal;
+            document.getElementById('total').value=subtotal2+subtotal1+subtotal3+subtotal4;
+
+        }
+        subtotal4=0;
+        function subtot4(v){
+            subtotal4+=parseInt(v);
+            document.getElementById('subtotal4').value=subtotal4;
+            document.getElementById('total').value=subtotal2+subtotal1+subtotal3+subtotal4;
+
+        }
+
+
+      
+    </script>
+
+</head>
+<body onload="disable1();">
+    
+    USN: <input type="text" id="tx1"> &nbsp;&nbsp;&nbsp;
+    NAME:<input type="text" id="tx2" onkeyup="if(this.value.length>0) enable();"><br><br><br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SUB TOTAL
+    <br>
+
+    Subject1: Q1(10) <input type="text" id="tx3" size="3" onkeyup="if(this.value>10){alert('Greater than 10');this.value='';subtotal=0;}else subtot1(this.value);"> &nbsp; &nbsp; &nbsp;
+             Q2(10) <input type="text" id="tx4" size="3" onkeyup="if(this.value>10){alert('Greater than 10');this.value='';}else subtot1(this.value);">  &nbsp; &nbsp; &nbsp;
+             Q3(5)<input type="text" id="tx5" size="3" onkeyup="if(this.value>5){alert('Greater than 5');this.value='';}else subtot1(this.value);"> &nbsp; &nbsp; &nbsp;<input type="text" disabled id="subtotal1" size="5"><br><br>
+    
+    Subject2: Q1(10) <input type="text" id="tx6" size="3"  onkeyup="subtot2(this.value);"> &nbsp; &nbsp; &nbsp;
+             Q2(10) <input type="text" id="tx7" size="3"  onkeyup="subtot2(this.value);">  &nbsp; &nbsp; &nbsp;
+             Q3(5)<input type="text" id="tx8" size="3"  onkeyup="subtot2(this.value);"> &nbsp; &nbsp; &nbsp;<input type="text"  disabled id="subtotal2" size="5"><br><br>
+   
+    Subject3: Q1(10) <input type="text" id="tx9" size="3"  onkeyup="subtot3(this.value);"> &nbsp; &nbsp; &nbsp;
+              Q2(10) <input type="text" id="tx10" size="3"  onkeyup="subtot3(this.value);">  &nbsp; &nbsp; &nbsp;
+              Q3(5)<input type="text" id="tx11" size="3"  onkeyup="subtot3(this.value);"> &nbsp; &nbsp; &nbsp;<input type="text" disabled id="subtotal3" size="5"><br><br>
+
+    Subject4: Q1(10) <input type="text" id="tx12" size="3"  onkeyup="subtot4(this.value);"> &nbsp; &nbsp; &nbsp;
+              Q2(10) <input type="text" id="tx13" size="3" onkeyup="subtot4(this.value);">  &nbsp; &nbsp; &nbsp;
+              Q3(5)<input type="text" id="tx14" onkeyup="subtot4(this.value);" size="3"> &nbsp; &nbsp; &nbsp;<input type="text"  disabled id="subtotal4" size="5"><br><br>
+
+    <h4>Total:<input type="text"  id="total" disabled size="5"></h4>
+
+
+
+</body>
+</html>
