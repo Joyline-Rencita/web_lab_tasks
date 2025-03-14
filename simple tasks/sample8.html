@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function disable(){
+            t1= document.getElementById('s1q1').disabled=true;
+            t2= document.getElementById('s1q2').disabled=true;
+            t3=document.getElementById('s1q3').disabled=true;
+            t4= document.getElementById('s1q4').disabled=true;
+            t5= document.getElementById('s2q1').disabled=true;
+            t6= document.getElementById('s2q2').disabled=true;
+            t7= document.getElementById('s2q3').disabled=true;
+            t9=document.getElementById('s2q4').disabled=true;
+            t10= document.getElementById('s3q1').disabled=true;
+            t11= document.getElementById('s3q2').disabled=true;
+            t12= document.getElementById('s3q3').disabled=true;
+            t13= document.getElementById('s3q4').disabled=true;
+            t14= document.getElementById('s4q1').disabled=true;
+            t15= document.getElementById('s4q2').disabled=true;
+            t16= document.getElementById('s4q3').disabled=true;
+            t17= document.getElementById('s4q4').disabled=true;
+            if(document.getElementById('usn').value=="" &&document.getElementById('name').value==""){
+             disable();
+             
+            }
+            else{
+                 enable();
+            }
+            disable();
+        } 
+        function enable(){
+            t1= document.getElementById('s1q1').disabled=false;
+            t2= document.getElementById('s1q2').disabled=false;
+            t3=document.getElementById('s1q3').disabled=false;
+            t4= document.getElementById('s1q4').disabled=false;
+            t5= document.getElementById('s2q1').disabled=false;
+            t6= document.getElementById('s2q2').disabled=false;
+            t7= document.getElementById('s2q3').disabled=false;
+            t9=document.getElementById('s2q4').disabled=false;
+            t10= document.getElementById('s3q1').disabled=false;
+            t11= document.getElementById('s3q2').disabled=false;
+            t12= document.getElementById('s3q3').disabled=false;
+            t13= document.getElementById('s3q4').disabled=false;
+            t14= document.getElementById('s4q1').disabled=false;
+            t15= document.getElementById('s4q2').disabled=false;
+            t16= document.getElementById('s4q3').disabled=false;
+            t17= document.getElementById('s4q4').disabled=false;
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        USN: <input type="text" id="usn" name="usn">
+        NAME: <input type="text" id="name" name="name" onkeyup="if(this.value.length>0) enable();">
+    </div>
+   <div id="marks">
+    <p>Subject1 : Q1(10M)<input type="number" id="s1q1" name="s1q1" class="question" disabled/>Q2(10M)<input type="number" id="s1q2" class="question" disabled name="s1q2"/>Q3(10M)<input type="number" id="s1q3" name="s1q3" class="question" disabled/>Q4(10M)<input type="number" id="s1q4" name="s1q4" class="question" disabled/>Subtotal:<input type="number" id="s1tot" name="s1tot"/></p>
+    <p>Subject2 : Q1(10M)<input type="number" id="s2q1" name="s2q1" class="question" disabled/>Q2(10M)<input type="number" id="s2q2" class="question" disabled name="s2q2"/>Q3(10M)<input type="number" id="s2q3" name="s2q3" class="question" disabled/>Q4(10M)<input type="number" id="s2q4" name="s2q4" class="question" disabled/>Subtotal:<input type="number" id="s2tot" name="s2tot"/></p>
+    <p>Subject3 : Q1(10M)<input type="number" id="s3q1" name="s3q1" class="question" disabled/>Q2(10M)<input type="number" id="s3q2" class="question" disabled name="s3q2"/>Q3(10M)<input type="number" id="s3q3" name="s1q2" class="question" disabled/>Q4(10M)<input type="number" id="s3q4" name="s3q4" class="question" disabled/>Subtotal:<input type="number" id="s3tot" name="s3tot"/></p>
+    <p>Subject4 : Q1(10M)<input type="number" id="s4q1" name="s4q1" class="question" disabled/>Q2(10M)<input type="number" id="s4q2" class="question" disabled name="s4q2"/>Q3(10M)<input type="number" id="s4q3" name="s1q2" class="question" disabled/>Q4(10M)<input type="number" id="s4q4" name="s4q4" class="question" disabled/>Subtotal:<input type="number" id="s4tot" name="s4tot"/></p>
+    <p>Total: <input type="number" id="total" name="total" style="text-align: right;" readonly></p>
+    </div>
+</body>
+</html>
